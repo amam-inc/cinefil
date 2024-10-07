@@ -1,29 +1,69 @@
-# Create T3 App
+<h1 align="center">
+    <br>
+    <a href="https://cinefil.vercel.app/">
+        <img src="/public/logo-white.svg" alt="CinéFIL" width="200">
+    </a>
+    <br>
+    CinéFIL
+</h1>
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+<h4 align="center">Site de vote du CinéFIL à l'IMT Atlantique</h4>
 
-## What's next? How do I make an app with this?
+<p align="center">
+  <a href="#🛠️-participer-au-développement">Participer</a> •
+  <a href="#🕹️-outils-utilisés">Outils</a> •
+  <a href="#🤠-crédits">Crédit</a> •
+  <a href="#©-licence">Licence</a>
+</p>
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+> **NOTE:** CinéFIL est un projet créé par des étudiants de l'IMT mais n'est pas affilié à l'école
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+## 🛠️ Participer au développement
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+### Code
 
-## Learn More
+Pour clôner le projet et lancer l'application, vous aurez besoin d'installer [Git](https://git-scm.com)
+et [Node.js](https://nodejs.org/en/download/) (qui installe [npm](http://npmjs.com)). Depuis votre terminal:
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+```bash
+# Clôner le projet
+$ git clone https://github.com/amam-inc/cinefil
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+# Se déplacer dans le projet
+$ cd cinefil
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+# Installer les dépendances
+$ npm install
 
-## How do I deploy this?
+# Lancer l'application
+$ npm run dev
+```
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+## 🕹️ Outils utilisés
+
+<img src="https://skillicons.dev/icons?i=react,tailwind,nextjs,vercel" alt="Les technologies utilisées" />
+
+## 🤠 Crédits
+
+<table>
+    <tr>
+        <td align="center">
+            <a href="https://github.com/matisbyar">
+                <img src="https://avatars.githubusercontent.com/u/86782053?v=4" width="100px;" alt="Image de profil" style="border-radius: 100%"/>
+                <br />
+                <sub><b>Matis</b></sub>
+            </a>
+        </td>
+        <td align="center">
+            <a href="https://github.com/maxbodin">
+                <img src="https://avatars.githubusercontent.com/u/159888863?v=4" width="100px;" alt="Image de profil" style="border-radius: 100%"/>
+                <br />
+                <sub><b>Maxime</b></sub>
+            </a>
+        </td>
+    </tr>
+</table>
+
+## © Licence
+
+[MIT](LICENSE)
