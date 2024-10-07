@@ -16,14 +16,14 @@
   <a href="#©-licence">Licence</a>
 </p>
 
-> **NOTE:** CinéFIL est un projet créé par des étudiants de l'IMT mais n'est pas affilié à l'école
+> **NOTE :** CinéFIL est un projet créé par des étudiants de l'IMT mais n'est pas affilié à l'école.
 
 ## 🛠️ Participer au développement
 
 ### Code
 
 Pour clôner le projet et lancer l'application, vous aurez besoin d'installer [Git](https://git-scm.com)
-et [Node.js](https://nodejs.org/en/download/) (qui installe [npm](http://npmjs.com)). Depuis votre terminal:
+et [Node.js](https://nodejs.org/en/download/) (qui installe [npm](http://npmjs.com)). Depuis votre terminal :
 
 ```bash
 # Clôner le projet
@@ -41,7 +41,7 @@ $ npm run dev
 
 ## 🕹️ Outils utilisés
 
-<img src="https://skillicons.dev/icons?i=react,tailwind,nextjs,vercel" alt="Les technologies utilisées" />
+<img src="https://skillicons.dev/icons?i=react,tailwind,nextjs,vercel&theme=dark" alt="Les technologies utilisées" />
 
 ## 🤠 Crédits
 
