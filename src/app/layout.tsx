@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import Navbar from "@/components/navbar";
 
 import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
@@ -13,8 +14,11 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${GeistSans.variable} text-white bg-stone-950`}>
-      <body>{children}</body>
+    <html lang="en" className={`${GeistSans.variable} bg-stone-950 text-white`}>
+      <body>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }

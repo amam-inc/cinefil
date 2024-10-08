@@ -10,7 +10,7 @@ export default function SignIn() {
             }}
             className="flex gap-2"
         >
-            <button type="submit"><GitHubLogoIcon /> Sign in with GitHub</button>
+            <button type="submit" className="flex gap-2 p-2 items-center"><GitHubLogoIcon /> Sign in with GitHub</button>
         </form>
     )
 }
