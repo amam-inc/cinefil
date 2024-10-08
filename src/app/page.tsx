@@ -2,6 +2,7 @@
 import MoviesGrid from "@/components/moviesGrid";
 import {MovieSearchBarProvider} from "@/components/movieSearchBar/movieSearchBarProvider";
 import {MovieSearchBar} from "@/components/movieSearchBar/movieSearchBar";
+import Suggestions from "@/components/suggestions";
 
 export default function HomePage() {
     return (
@@ -10,6 +11,8 @@ export default function HomePage() {
                 <MovieSearchBar/>
                 <MoviesGrid/>
             </MovieSearchBarProvider>
+
+            <Suggestions />
         </main>
     );
 }
