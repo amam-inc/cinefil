@@ -7,7 +7,17 @@
     CinéFIL
 </h1>
 
-<h4 align="center">Site de vote du CinéFIL à l'IMT Atlantique</h4>
+<h4 align="center">Site de votre cinéma CinéFIL à l'IMT Atlantique</h4>
+
+---
+
+L'application CinéFIL est une application intuitive dédiée aux adhérent du cinéma CinéFIL, qui permet de rester informé des prochaines séances et de s'inscrire à la newsletter pour ne manquer aucun événement. Mais aussi rechercher des films pour obtenir des informations détaillées ou pour les proposer à la diffusion, tout en consultant le classement des films suggérés par la communauté. Cette application permet également de voter pour vos films préférés et visualiser l'historique des films déjà diffusés. 
+
+---
+
+Grâce à l'application CinéFIL, vous êtes au cœur des choix et de la programmation de votre cinéma.
+
+---
 
 <p align="center">
   <a href="#🛠️-participer-au-développement">Participer</a> •
@@ -17,6 +27,8 @@
 </p>
 
 > **NOTE :** CinéFIL est un projet créé par des étudiants de l'IMT mais n'est pas affilié à l'école.
+
+---
 
 ## 🛠️ Participer au développement
 
@@ -39,9 +51,13 @@ $ npm install
 $ npm run dev
 ```
 
+---
+
 ## 🕹️ Outils utilisés
 
 <img src="https://skillicons.dev/icons?i=react,tailwind,nextjs,vercel&theme=dark" alt="Les technologies utilisées" />
+
+---
 
 ## 🤠 Crédits
 
