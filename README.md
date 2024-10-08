@@ -7,7 +7,7 @@
     CinéFIL
 </h1>
 
-<h4 align="center">Site de votre cinéma CinéFIL à l'IMT Atlantique</h4>
+<h4 align="center">Site de votre cinéma CinéFIL à IMT Atlantique</h4>
 
 ---
 
