@@ -2,10 +2,12 @@ import {Suspense} from "react";
 import MoviesGrid from "@/components/movie/moviesGrid";
 import Search from "@/components/search";
 import MovieDetails from "@/components/movie/movieDetails";
+import Suggestions from "@/components/suggestions";
+import {searchMovies} from "@/server/services/tmdb";
 
-export default function HomePage({
-                                     searchParams,
-                                 }: {
+export default async function HomePage({
+                                           searchParams,
+                                       }: {
     searchParams?: { query?: string; filmId?: string; };
 }) {
 
@@ -18,16 +20,19 @@ export default function HomePage({
 
             <div className="flex flex-row items-start justify-center">
                 <Suspense key={query} fallback={<div>Loading...</div>}>
-                    <MoviesGrid query={query} filmId={Number(filmId)}/>
+                    <MoviesGrid movies={(await searchMovies(query)).results} filmId={Number(filmId)}/>
                 </Suspense>
 
                 {filmId && query && (
-                    <Suspense fallback={<div>Loading details...</div>}>
+                    <Suspense key={filmId} fallback={<div>Loading details...</div>}>
                         <MovieDetails filmId={Number(filmId)}/>
                     </Suspense>
                 )}
             </div>
 
+            {!query ? (
+                <Suggestions/>
+            ) : null}
         </main>
     );
 }
