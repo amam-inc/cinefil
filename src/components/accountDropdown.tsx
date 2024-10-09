@@ -1,7 +1,7 @@
-import { auth, signOut } from "@/auth";
-import SignIn from "@/components/signIn";
+import { auth, signIn, signOut } from "@/auth";
 import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import { CircleUser } from "lucide-react";
 
 /**
@@ -19,7 +19,7 @@ export default async function AccountDropdown() {
         <DropdownMenuTrigger asChild>
           <Button variant="secondary" size="icon" className="rounded-full">
             <CircleUser className="h-5 w-5" />
-            <span className="sr-only">Afficher le menu</span>
+            <span className="sr-only">Display the menu</span>
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" asChild>
@@ -35,13 +35,21 @@ export default async function AccountDropdown() {
                     await signOut();
                   }}
                 >
-                  <button type="submit">Se déconnecter</button>
+                  <button type="submit">Sign out</button>
                 </form>
               </DropdownMenuItem>
             </>
           ) : (
-            <SignIn />
-          )}
+              <form
+                  action={ async () => {
+                      "use server"
+                      await signIn("github")
+                  } }
+                  className="flex gap-2"
+              >
+                  <button type="submit" className="flex gap-2 p-2 items-center"><GitHubLogoIcon/> Sign in with GitHub</button>
+              </form>
+          ) }
         </DropdownMenuContent>
       </DropdownMenu>
     </div>
