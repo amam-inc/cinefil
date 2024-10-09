@@ -1,9 +1,8 @@
 "use server";
 import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle,} from "@/components/ui/card"
-import {Button} from "@/components/ui/button";
 import {getMovieDetails} from "@/server/services/tmdb";
-import CloseDetailsButton from "@/components/closeDetailsButton";
-import {Suspense} from "react";
+import CloseDetailsButton from "@/components/customButtons/closeDetailsButton";
+import SuggestButton from "@/components/customButtons/suggestButton";
 
 
 export default async function MovieDetails({filmId}: { filmId: number }) {
@@ -37,9 +36,7 @@ export default async function MovieDetails({filmId}: { filmId: number }) {
                         className="rounded-lg sm:w-full w-2/3 h-full object-cover"
                     />
                 </div>
-                <Suspense>
-                    <CloseDetailsButton/>
-                </Suspense>
+                <CloseDetailsButton/>
             </div>
 
             {/* Card Content with Overlay Text */}
@@ -61,7 +58,7 @@ export default async function MovieDetails({filmId}: { filmId: number }) {
                 </CardContent>
 
                 <CardFooter className="mt-4">
-                    <Button variant="outline" className="text-white">Proposer le film</Button>
+                    <SuggestButton movieDetails={movieDetails}/>
                 </CardFooter>
             </div>
         </Card>

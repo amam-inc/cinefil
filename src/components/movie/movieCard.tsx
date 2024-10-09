@@ -1,10 +1,10 @@
 'use client';
 
-import {Movie} from 'tmdb-ts';
+import {Movie, MovieDetails} from 'tmdb-ts';
 import {Card, CardContent, CardFooter, CardHeader, CardTitle,} from "@/components/ui/card"
-import {Button} from "@/components/ui/button";
 import {usePathname, useRouter, useSearchParams} from "next/navigation";
 import {useDebouncedCallback} from "use-debounce";
+import SuggestButton from "@/components/customButtons/suggestButton";
 
 export default function MoviesCard({movie}: { movie: Movie }) {
     const searchParams = useSearchParams();
@@ -39,7 +39,7 @@ export default function MoviesCard({movie}: { movie: Movie }) {
                 <p className="text-sm text-start text-gray-500">{movie.release_date}</p>
             </CardHeader>
             <CardFooter>
-                <Button variant="outline">Proposer</Button>
+                <SuggestButton movieDetails={movie as MovieDetails}/>
             </CardFooter>
         </Card>
     );
