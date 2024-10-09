@@ -21,7 +21,7 @@ export default function HomePage({
                     <MoviesGrid query={query} filmId={Number(filmId)}/>
                 </Suspense>
 
-                {filmId && (
+                {filmId && query && (
                     <Suspense fallback={<div>Loading details...</div>}>
                         <MovieDetails filmId={Number(filmId)}/>
                     </Suspense>
