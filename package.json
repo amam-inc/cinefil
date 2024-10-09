@@ -33,6 +33,7 @@
     "rate-limiter-flexible": "^5.0.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "sonner": "^1.5.0",
     "tailwind-merge": "^2.5.3",
     "tailwindcss-animate": "^1.0.7",
     "tmdb-ts": "^2.0.1",

@@ -4,6 +4,7 @@ import {GeistSans} from "geist/font/sans";
 import {type Metadata} from "next";
 import React from "react";
 import {ThemeProvider} from "@/components/themeProvider";
+import {Toaster} from "@/components/ui/sonner"
 
 export const metadata: Metadata = {
     title: "CinéFIL",
@@ -25,6 +26,7 @@ export default function RootLayout({
         >
             {children}
         </ThemeProvider>
+        <Toaster/>
         </body>
         </html>
     );
