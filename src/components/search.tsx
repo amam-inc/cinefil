@@ -17,6 +17,9 @@ export default function Search({placeholder}: { placeholder: string }) {
             params.set("query", term);
         } else {
             params.delete("query");
+
+            // Remove film details if no query.
+            params.delete("filmId");
         }
 
         router.replace(`${pathname}?${params.toString()}`);
