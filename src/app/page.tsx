@@ -1,18 +1,28 @@
-import MoviesGrid from "@/app/server";
+import MovieDetails from "@/components/movie/movieDetails";
+import MoviesGrid from "@/components/movie/moviesGrid";
 import { Suspense } from "react";
 
 export default function HomePage({
   searchParams,
 }: {
-  searchParams?: { query?: string };
+  searchParams?: { query?: string; filmId?: string };
 }) {
-  const query = searchParams?.query ?? "";
+  const query: string = searchParams?.query ?? "";
+  const filmId: string | undefined = searchParams?.filmId;
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-4 pt-20">
-      <Suspense key={query} fallback={<div>Loading...</div>}>
-        <MoviesGrid query={query} />
-      </Suspense>
+    <main className="flex flex-col items-center justify-center p-4 text-white">
+      <div className="flex flex-row items-start justify-center">
+        <Suspense key={query} fallback={<div>Loading...</div>}>
+          <MoviesGrid query={query} filmId={Number(filmId)} />
+        </Suspense>
+
+        {filmId && query ? (
+          <Suspense fallback={<div>Loading details...</div>}>
+            <MovieDetails filmId={Number(filmId)} />
+          </Suspense>
+        ) : null}
+      </div>
     </main>
   );
 }

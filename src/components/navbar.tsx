@@ -1,5 +1,5 @@
-import Search from "@/app/client";
 import AccountDropdown from "@/components/accountDropdown";
+import Search from "@/components/search";
 
 export default function Navbar() {
     return (
