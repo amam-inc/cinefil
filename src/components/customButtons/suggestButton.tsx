@@ -5,6 +5,7 @@ import {MovieDetails} from "tmdb-ts";
 
 export default function SuggestButton({movieDetails}: { movieDetails: MovieDetails }) {
     return (
-        <Button variant="outline" className="text-white" onClick={() => (createdSuggestion(movieDetails))}>Proposer le film</Button>
+        <Button variant="outline" className="text-white" onClick={() => (createdSuggestion(movieDetails))}>Proposer le
+            film</Button>
     )
 }

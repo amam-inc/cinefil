@@ -1,4 +1,4 @@
-import {Movie, MovieDetails} from "tmdb-ts";
+import {MovieDetails} from "tmdb-ts";
 import {toast} from "sonner";
 import {createClient} from "../../utils/supabase/client";
 
@@ -10,7 +10,7 @@ export const createdSuggestion = async (movie: MovieDetails): Promise<void> => {
     });
 
     if (error) {
-        if(error.code == 23505){
+        if (error.code == 23505) {
             toast.warning(`${movie.title} est déjà ajouté aux suggestions.`, {
                 action: {
                     label: "Voir les suggestions",
