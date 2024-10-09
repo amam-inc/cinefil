@@ -1,7 +1,7 @@
 'use client';
 
-import { createClient } from "../../utils/supabase/client";
-import { useEffect, useState } from "react";
+import {createClient} from "../../utils/supabase/client";
+import {useEffect, useState} from "react";
 
 export default function Suggestions() {
     const [data, setData] = useState<any>(null);
@@ -9,7 +9,7 @@ export default function Suggestions() {
     const supabase = createClient();
 
     const fetchData = async () => {
-        const { data, error } = await supabase.from("suggestions").select();
+        const {data, error} = await supabase.from("suggestions").select();
 
         if (error) {
             console.error("Error fetching suggestions:", error);
