@@ -40,7 +40,7 @@ export default function MoviesCard({movie, hasBeenSuggested}: { movie: Movie, ha
             </CardHeader>
             <CardFooter>
                 {hasBeenSuggested ? <>{ /* TODO : Add Vote Button. */}</> :
-                    <SuggestButton movieDetails={movie as MovieDetails}/>
+                    <SuggestButton movieDetails={movie as unknown as MovieDetails}/>
                 }
             </CardFooter>
         </Card>
