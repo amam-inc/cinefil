@@ -31,7 +31,7 @@ export const getShortHumanReadableDate = (date: string | null | undefined): stri
  * Output: '2024'
  * @param date
  */
-export const getDateOnly = (date: string | null | undefined): string => {
+export const getYearOnly = (date: string | null | undefined): string => {
     const parsedDate = new Date(date ?? '');  // Fallback to empty string if null or undefined.
     if (!isValid(parsedDate)) {
         console.error(`Invalid date: ${date}`);

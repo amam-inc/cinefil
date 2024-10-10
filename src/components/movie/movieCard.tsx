@@ -6,7 +6,7 @@ import {usePathname, useRouter, useSearchParams} from "next/navigation";
 import {type Movie, type MovieDetails} from "tmdb-ts";
 import {useDebouncedCallback} from "use-debounce";
 import React from "react";
-import {getHumanReadableDate, getShortHumanReadableDate} from "@/utils/date";
+import {getHumanReadableDate, getYearOnly} from "@/utils/date";
 import {SearchParams} from "@/app/searchParams";
 
 export default function MoviesCard(
@@ -43,7 +43,7 @@ export default function MoviesCard(
                 </CardContent>
                 <CardHeader>
                     <CardTitle className={"text-xl"}>{movie.title}</CardTitle>
-                    <p className="text-start text-sm text-gray-500">{getShortHumanReadableDate(movie.release_date)}</p>
+                    <p className="text-start text-sm text-gray-500">{getYearOnly(movie.release_date)}</p>
                     {shownOn ? <p className="text-start text-sm text-red-500 font-bold pt-8">
                         Diffusé lors de la séance du : {getHumanReadableDate(shownOn)}
                     </p> : null}

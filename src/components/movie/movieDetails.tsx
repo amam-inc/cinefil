@@ -3,7 +3,7 @@ import CloseDetailsButton from "@/components/customButtons/closeDetailsButton";
 import SuggestButton from "@/components/customButtons/suggestButton";
 import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle} from "@/components/ui/card";
 import {getMovieDetails} from "@/server/services/tmdb";
-import {getDateOnly} from "@/utils/date";
+import {getYearOnly} from "@/utils/date";
 
 export default async function MovieDetails({filmId}: { filmId: number }) {
     const movieDetails = await getMovieDetails(filmId);
@@ -48,7 +48,7 @@ export default async function MovieDetails({filmId}: { filmId: number }) {
                     <CardTitle className="text-4xl font-bold">
                         {movieDetails.title}
                     </CardTitle>
-                    <p className="text-lg text-gray-300">Date de sortie en salle : {getDateOnly(movieDetails.release_date)}</p>
+                    <p className="text-lg text-gray-300">Année de sortie en salle : {getYearOnly(movieDetails.release_date)}</p>
                 </CardHeader>
                 <CardContent className="flex-grow">
                     <p className="text-md text-gray-400">
