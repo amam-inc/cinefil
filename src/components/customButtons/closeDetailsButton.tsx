@@ -1,7 +1,7 @@
 "use client";
 import {Button} from "@/components/ui/button";
-import {CloseIcon} from "next/dist/client/components/react-dev-overlay/internal/icons/CloseIcon";
 import {usePathname, useRouter, useSearchParams} from "next/navigation";
+import {XIcon} from "lucide-react";
 
 export default async function CloseDetailsButton() {
     const searchParams = useSearchParams();
@@ -16,7 +16,7 @@ export default async function CloseDetailsButton() {
 
     return (
         <Button variant="outline" size="icon" onClick={closeDetails}>
-            <CloseIcon className="h-4 w-4"/>
+            <XIcon className="h-4 w-4"/>
         </Button>
     );
 }
