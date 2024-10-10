@@ -3,6 +3,7 @@ import {Input} from "@/components/ui/input";
 import {MagnifyingGlassIcon} from "@radix-ui/react-icons";
 import {usePathname, useRouter, useSearchParams} from "next/navigation";
 import {useDebouncedCallback} from "use-debounce";
+import {SearchParams} from "@/app/searchParams";
 
 export default function Search({placeholder}: { placeholder: string }) {
     const searchParams = useSearchParams();
@@ -13,12 +14,12 @@ export default function Search({placeholder}: { placeholder: string }) {
         const params = new URLSearchParams(searchParams);
 
         if (term) {
-            params.set("query", term);
+            params.set(SearchParams.QUERY, term);
         } else {
-            params.delete("query");
+            params.delete(SearchParams.QUERY);
 
             // Remove film details if no query.
-            params.delete("filmId");
+            params.delete(SearchParams.FILM_ID);
         }
 
         router.replace(`${pathname}?${params.toString()}`);
@@ -35,7 +36,7 @@ export default function Search({placeholder}: { placeholder: string }) {
                 onChange={(e) => {
                     handleSearch(e.target.value);
                 }}
-                defaultValue={searchParams.get("query")?.toString()}
+                defaultValue={searchParams.get(SearchParams.QUERY)?.toString()}
             />
             <MagnifyingGlassIcon
                 className="absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900"/>
