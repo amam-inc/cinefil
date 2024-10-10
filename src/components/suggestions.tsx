@@ -1,27 +1,47 @@
-'use client';
+import {createClient} from "../../utils/supabase/server";
+import React, {Suspense} from "react";
+import {Suggestion} from "@/types/suggestion";
+import {getMovieDetails} from "@/server/services/tmdb";
+import MoviesGrid from "@/components/movie/moviesGrid";
+import {Movie} from "tmdb-ts";
 
-import {createClient} from "../../utils/supabase/client";
-import {useEffect, useState} from "react";
+export default async function Suggestions() {
 
-export default function Suggestions() {
-    const [data, setData] = useState<any>(null);
+    /**
+     * Fetch movie details for each suggestion based on tmdb_id.
+     * @param suggestions
+     */
+    const fetchMoviesDetails = async (suggestions: Suggestion[]) => {
+        const moviePromises = suggestions.map(async (suggestion) => {
+            return await getMovieDetails(suggestion.tmdb_id);
+        });
 
-    const supabase = createClient();
+        return await Promise.all(moviePromises);
+    };
 
-    const fetchData = async () => {
-        const {data, error} = await supabase.from("suggestions").select();
+    /**
+     *
+     */
+    const fetchSuggestions = async () => {
+        const {data, error} = await createClient().from("suggestions").select();
 
         if (error) {
             console.error("Error fetching suggestions:", error);
-            return;
+            // TODO : Add error handlingg.
+            return <>{error}</>;
         }
 
-        setData(data);
-    };
+        if (data && data.length > 0) {
+            return fetchMoviesDetails(data as Suggestion[]);
+        }
+    }
 
-    useEffect((): void => {
-        fetchData();
-    }, [supabase]);
-
-    return <pre>{JSON.stringify(data, null, 2)}</pre>;
+    return (
+        <div className="flex flex-col">
+            <h1 className="text-2xl font-bold text-center mt-4">Suggestions des utilisateurs</h1>
+            <Suspense>
+                <MoviesGrid movies={await fetchSuggestions() as unknown[] as Movie[]} forSuggestions={true}/>
+            </Suspense>
+        </div>
+    );
 }
