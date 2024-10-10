@@ -25,7 +25,8 @@ export default async function Suggestions({displayShown}: {
      *
      */
     const fetchSuggestions = async () => {
-        const {data, error} = await createClient().from("suggestions").select();
+        const {data, error} = await createClient().from("suggestions").select()
+            .order('shownOn', { ascending: false });  // Sort by shownOn in descending order.
 
         if (error) {
             console.error("Error fetching suggestions:", error);
