@@ -1,11 +1,13 @@
 import {createClient} from "../../utils/supabase/server";
 import React, {Suspense} from "react";
-import {Suggestion} from "@/types/suggestion";
+import {type Suggestion} from "@/types/suggestion";
 import {getMovieDetails} from "@/server/services/tmdb";
 import MoviesGrid from "@/components/movie/moviesGrid";
-import {Movie} from "tmdb-ts";
+import {type Movie} from "tmdb-ts";
 
-export default async function Suggestions() {
+export default async function Suggestions({displayShown}: {
+    displayShown: string,
+}) {
 
     /**
      * Fetch movie details for each suggestion based on tmdb_id.
@@ -40,7 +42,8 @@ export default async function Suggestions() {
         <div className="flex flex-col">
             <h1 className="text-2xl font-bold text-center mt-4">Suggestions des utilisateurs</h1>
             <Suspense>
-                <MoviesGrid movies={await fetchSuggestions() as unknown[] as Movie[]} forSuggestions={true}/>
+                <MoviesGrid movies={await fetchSuggestions() as unknown[] as Movie[]} forSuggestions={true}
+                            displayShown={displayShown}/>
             </Suspense>
         </div>
     );
