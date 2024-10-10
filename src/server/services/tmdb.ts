@@ -22,6 +22,7 @@ import {
 } from 'tmdb-ts';
 import {RateLimiterMemory} from 'rate-limiter-flexible';
 
+const LOCALE = "fr"
 const tmdb: TMDB = new TMDB(process.env.TMDB_API_TOKEN!);
 
 // Rate limiter configuration : limit to 15 requests per minute.
@@ -81,7 +82,7 @@ export const getMovieDetails = async (id: number): Promise<(MovieDetails & { cre
 
     try {
         // Call the TMDB API.
-        return await tmdb.movies.details(id);
+        return await tmdb.movies.details(id, undefined, LOCALE);
     } catch (err) {
         // Handle TMDB API errors.
         console.error('Error fetching movies:', err);
