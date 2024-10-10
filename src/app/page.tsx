@@ -1,9 +1,8 @@
 import MovieDetails from "@/components/movie/movieDetails";
 import MoviesGrid from "@/components/movie/moviesGrid";
-import Search from "@/components/search";
 import Suggestions from "@/components/suggestions";
-import { searchMovies } from "@/server/services/tmdb";
-import { Suspense } from "react";
+import {searchMovies} from "@/server/services/tmdb";
+import {Suspense} from "react";
 
 export default async function HomePage({searchParams}: { searchParams?: { query?: string; filmId?: string; }; }) {
     const query: string = searchParams?.query ?? '';
@@ -11,9 +10,7 @@ export default async function HomePage({searchParams}: { searchParams?: { query?
     
     return (
         <main className="flex flex-col items-center justify-center p-4 text-white">
-            <Search placeholder={ "Search movies..." }/>
-            
-            <div className="flex flex-row items-start justify-center">
+            <div className="flex flex-row items-start justify-center mt-20">
                 { !query ? (
                     <Suggestions/>
                 ) : (
