@@ -3,7 +3,6 @@ import CloseDetailsButton from "@/components/customButtons/closeDetailsButton";
 import SuggestButton from "@/components/customButtons/suggestButton";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { getMovieDetails } from "@/server/services/tmdb";
-import Image from "next/image";
 
 export default async function MovieDetails({filmId}: { filmId: number }) {
     const movieDetails = await getMovieDetails(filmId);
@@ -32,7 +31,8 @@ export default async function MovieDetails({filmId}: { filmId: number }) {
             {/* Poster Image Section */ }
             <div className="z-10 flex flex-row justify-between p-4">
                 <div className="relative flex h-full max-w-xs items-center justify-center">
-                    <Image
+                    {/* eslint-disable-next-line @next/next/no-img-element */ }
+                    <img
                         src={ posterUrl }
                         alt={ movieDetails.title }
                         className="h-full w-2/3 rounded-lg object-cover sm:w-full"

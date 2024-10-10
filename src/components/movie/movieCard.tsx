@@ -2,7 +2,6 @@
 
 import SuggestButton from "@/components/customButtons/suggestButton";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import Image from "next/image";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { type Movie, type MovieDetails } from "tmdb-ts";
 import { useDebouncedCallback } from "use-debounce";
@@ -32,7 +31,8 @@ export default function MoviesCard({movie, hasBeenSuggested}: { movie: Movie; ha
             } }
         >
             <CardContent>
-                <Image
+                {/* eslint-disable-next-line @next/next/no-img-element */ }
+                <img
                     src={ `https://image.tmdb.org/t/p/w500${ movie.poster_path }` }
                     alt={ movie.title }
                     className="rounded-lg p-4"
