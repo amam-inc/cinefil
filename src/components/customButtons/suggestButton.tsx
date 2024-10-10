@@ -34,7 +34,7 @@ export default function SuggestButton({movieDetails}: { movieDetails: MovieDetai
         });
 
         if (error) {
-            if (error.code == 23505) {
+            if (error.code.toString() === "23505") {
                 toast.warning(`${movie.title} est déjà ajouté aux suggestions.`, {
                     action: {
                         label: "Voir les suggestions",
