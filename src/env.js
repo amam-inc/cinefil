@@ -13,7 +13,6 @@ export const env = createEnv({
         TMDB_API_TOKEN: z.string(),
         SUPABASE_URL: z.string(),
         SUPABASE_ANON_KEY: z.string(),
-        AUTH_SECRET: z.string(),
         AUTH_GITHUB_ID: z.string(),
         AUTH_GITHUB_SECRET: z.string(),
     },
@@ -27,27 +26,26 @@ export const env = createEnv({
         // NEXT_PUBLIC_CLIENTVAR: z.string(),
     },
 
-  /**
-   * You can't destruct `process.env` as a regular object in the Next.js edge runtimes (e.g.
-   * middlewares) or client-side so we need to destruct manually.
-   */
-  runtimeEnv: {
-    NODE_ENV: process.env.NODE_ENV,
-    TMDB_API_TOKEN: process.env.TMDB_API_TOKEN,
-    SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
-    SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
-    AUTH_SECRET: process.env.AUTH_SECRET,
-    AUTH_GITHUB_ID: process.env.AUTH_GITHUB_ID,
-    AUTH_GITHUB_SECRET: process.env.AUTH_GITHUB_SECRET,
-  },
-  /**
-   * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially
-   * useful for Docker builds.
-   */
-  skipValidation: !!process.env.SKIP_ENV_VALIDATION,
-  /**
-   * Makes it so that empty strings are treated as undefined. `SOME_VAR: z.string()` and
-   * `SOME_VAR=''` will throw an error.
-   */
-  emptyStringAsUndefined: true,
+    /**
+     * You can't destruct `process.env` as a regular object in the Next.js edge runtimes (e.g.
+     * middlewares) or client-side so we need to destruct manually.
+     */
+    runtimeEnv: {
+        NODE_ENV: process.env.NODE_ENV,
+        TMDB_API_TOKEN: process.env.TMDB_API_TOKEN,
+        SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
+        SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+        AUTH_GITHUB_ID: process.env.AUTH_GITHUB_ID,
+        AUTH_GITHUB_SECRET: process.env.AUTH_GITHUB_SECRET,
+    },
+    /**
+     * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially
+     * useful for Docker builds.
+     */
+    skipValidation: !!process.env.SKIP_ENV_VALIDATION,
+    /**
+     * Makes it so that empty strings are treated as undefined. `SOME_VAR: z.string()` and
+     * `SOME_VAR=''` will throw an error.
+     */
+    emptyStringAsUndefined: true,
 });

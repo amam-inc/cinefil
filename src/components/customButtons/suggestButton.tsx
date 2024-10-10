@@ -1,9 +1,9 @@
 "use client";
 import { Button } from "@/components/ui/button";
+import { createClient } from "@/utils/supabase/client";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { toast } from "sonner";
 import { type MovieDetails } from "tmdb-ts";
-import { createClient } from "../../../utils/supabase/client";
 
 export default function SuggestButton({movieDetails}: { movieDetails: MovieDetails }) {
     const searchParams = useSearchParams();
