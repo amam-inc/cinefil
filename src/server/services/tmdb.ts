@@ -1,28 +1,28 @@
 'use server'
 import {
-    AlternativeTitles,
-    Changes,
-    Credits,
-    ExternalIds,
-    Images,
-    Keywords,
-    Movie,
-    MovieChangeValue,
-    MovieDetails,
-    MovieLists,
-    Recommendations,
-    ReleaseDates,
-    Reviews,
-    Search,
-    SimilarMovies,
+    type AlternativeTitles,
+    type Changes,
+    type Credits,
+    type ExternalIds,
+    type Images,
+    type Keywords,
+    type Movie,
+    type MovieChangeValue,
+    type MovieDetails,
+    type MovieLists,
+    type Recommendations,
+    type ReleaseDates,
+    type Reviews,
+    type Search,
+    type SimilarMovies,
     TMDB,
-    Translations,
-    Videos,
-    WatchProviders
+    type Translations,
+    type Videos,
+    type WatchProviders
 } from 'tmdb-ts';
 import {RateLimiterMemory} from 'rate-limiter-flexible';
 
-const tmdb: TMDB = new TMDB(process.env.TMDB_API_TOKEN as string);
+const tmdb: TMDB = new TMDB(process.env.TMDB_API_TOKEN!);
 
 // Rate limiter configuration : limit to 15 requests per minute.
 const rateLimiter = new RateLimiterMemory({

@@ -1,5 +1,4 @@
 "use client";
-
 import {Input} from "@/components/ui/input";
 import {MagnifyingGlassIcon} from "@radix-ui/react-icons";
 import {usePathname, useRouter, useSearchParams} from "next/navigation";
