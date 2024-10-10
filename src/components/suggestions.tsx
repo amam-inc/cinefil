@@ -27,7 +27,7 @@ export default async function Suggestions() {
 
         if (error) {
             console.error("Error fetching suggestions:", error);
-            // TODO : Improve.
+            // TODO : Add error handlingg.
             return <>{error}</>;
         }
 
@@ -37,11 +37,11 @@ export default async function Suggestions() {
     }
 
     return (
-        <>
+        <div className="flex flex-col">
             <h1 className="text-2xl font-bold text-center mt-4">Suggestions des utilisateurs</h1>
             <Suspense>
-                <MoviesGrid movies={await fetchSuggestions() as Movie[]}/>
+                <MoviesGrid movies={await fetchSuggestions() as Movie[]} forSuggestions={true}/>
             </Suspense>
-        </>
+        </div>
     );
 }

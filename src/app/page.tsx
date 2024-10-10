@@ -19,20 +19,21 @@ export default async function HomePage({
             <Search placeholder={"Search movies..."}/>
 
             <div className="flex flex-row items-start justify-center">
-                <Suspense key={query} fallback={<div>Loading...</div>}>
-                    <MoviesGrid movies={(await searchMovies(query)).results} filmId={Number(filmId)}/>
-                </Suspense>
+                {!query ? (
+                    <Suggestions/>
+                ) : (
+                    <Suspense key={query} fallback={<div>Loading...</div>}>
+                        <MoviesGrid movies={(await searchMovies(query)).results} filmId={Number(filmId)}
+                                    forSuggestions={false}/>
+                    </Suspense>)}
 
-                {filmId && query && (
+                {filmId ? (
                     <Suspense key={filmId} fallback={<div>Loading details...</div>}>
                         <MovieDetails filmId={Number(filmId)}/>
                     </Suspense>
-                )}
+                ): null}
             </div>
 
-            {!query ? (
-                <Suggestions/>
-            ) : null}
         </main>
     );
 }

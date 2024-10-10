@@ -6,7 +6,7 @@ import {usePathname, useRouter, useSearchParams} from "next/navigation";
 import {useDebouncedCallback} from "use-debounce";
 import SuggestButton from "@/components/customButtons/suggestButton";
 
-export default function MoviesCard({movie}: { movie: Movie }) {
+export default function MoviesCard({movie, hasBeenSuggested}: { movie: Movie, hasBeenSuggested: boolean }) {
     const searchParams = useSearchParams();
     const pathname = usePathname();
     const router = useRouter();
@@ -39,7 +39,9 @@ export default function MoviesCard({movie}: { movie: Movie }) {
                 <p className="text-sm text-start text-gray-500">{movie.release_date}</p>
             </CardHeader>
             <CardFooter>
-                <SuggestButton movieDetails={movie as MovieDetails}/>
+                {hasBeenSuggested ? <>{ /* TODO : Add Vote Button. */}</> :
+                    <SuggestButton movieDetails={movie as MovieDetails}/>
+                }
             </CardFooter>
         </Card>
     );
