@@ -6,7 +6,7 @@ import {createClient} from "../../../utils/supabase/server";
 export default async function MoviesGrid({movies, filmId, displayShown, forSuggestions}: {
     movies: Movie[];
     filmId?: number;
-    displayShown: string,
+    displayShown?: string | undefined,
     forSuggestions: boolean;
 }) {
 
@@ -39,8 +39,7 @@ export default async function MoviesGrid({movies, filmId, displayShown, forSugge
                     : "grid-cols-2 sm:grid-cols-3 lg:grid-cols-5"
             }`}
         >
-
-            {movies ? (
+            { movies ? (
                 movies.map((movie: Movie) => (
                     // If the movie has been shown and displayShown is false, hide the movie (return null).
                     !displayShownBoolValue && moviesId.some((value: { tmdb_id: number; shownOn: string }) => value.tmdb_id === movie.id) ? null : (

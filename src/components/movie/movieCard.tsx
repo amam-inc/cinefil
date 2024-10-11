@@ -11,7 +11,7 @@ import {SearchParams} from "@/app/searchParams";
 
 export default function MoviesCard(
     {movie, hasBeenSuggested, shownOn}:
-        { movie: Movie; hasBeenSuggested: boolean; shownOn: string | null }) {
+        { movie: Movie; hasBeenSuggested: boolean; shownOn?: string | undefined }) {
     const searchParams = useSearchParams();
     const pathname = usePathname();
     const router = useRouter();

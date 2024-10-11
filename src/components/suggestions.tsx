@@ -6,7 +6,7 @@ import MoviesGrid from "@/components/movie/moviesGrid";
 import {type Movie} from "tmdb-ts";
 
 export default async function Suggestions({displayShown}: {
-    displayShown: string,
+    displayShown?: string | undefined,
 }) {
 
     /**
