@@ -7,17 +7,17 @@ import { createClient } from "@/utils/supabase/server";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
 
 export default async function LoginPage() {
-    
     const supabase = createClient()
-    
     const {data, error} = await supabase.auth.getUser()
+    
+    console.log(error)
     
     return (
         <div className="pt-20 flex items-center justify-center h-screen">
             <Card className="w-[500px] flex flex-col items-center">
                 <CardHeader className="items-center">
                     <CardTitle className="text-xl font-bold">cinéfil</CardTitle>
-                    <CardDescription>Sign in to continue</CardDescription>
+                    <CardDescription>Hi! Sign in to continue</CardDescription>
                 </CardHeader>
                 <CardContent className="w-full">
                     <form className="flex flex-col gap-2">

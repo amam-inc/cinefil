@@ -13,17 +13,11 @@ export default async function AccountDropdown() {
     
     const {data, error} = await supabase.auth.getUser()
     
-    console.log(error)
-    
     return (
         <div className="flex items-center gap-4">
-            <div>{ data ? <b>{ data?.user?.email }</b> : null }</div>
+            <div>{ data ? <b>{ data?.user?.user_metadata.name }</b> : null }</div>
             { data?.user ? (
-                <>
-                    <form>
-                        <Button variant="outline" formAction={ signOut }>Sign out</Button>
-                    </form>
-                </>
+                <form><Button variant="outline" formAction={ signOut }>Sign out</Button></form>
             ) : (
                 <Link href={ "/login" }><Button variant="outline">Sign in</Button></Link>
             ) }
