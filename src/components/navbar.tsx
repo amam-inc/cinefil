@@ -8,8 +8,8 @@ export default function Navbar() {
                 <h1 className="text-xl font-bold">cinéfil</h1>
             </div>
             <div className="flex items-center gap-4">
-                <Search placeholder={"Search movies..."} />
-                <AccountDropdown />
+                <Search placeholder={ "Search movies..." }/>
+                <AccountDropdown/>
             </div>
         </div>
     )
