@@ -1,4 +1,5 @@
 "use client";
+import { SearchParams } from "@/app/searchParams";
 import { Button } from "@/components/ui/button";
 import { createClient } from "@/utils/supabase/client";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
@@ -15,8 +16,8 @@ export default function SuggestButton({movieDetails}: { movieDetails: MovieDetai
      */
     const displaySuggestions = (): void => {
         const params = new URLSearchParams(searchParams);
-        params.delete("query");
-        params.delete("filmId");
+        params.delete(SearchParams.QUERY);
+        params.delete(SearchParams.FILM_ID);
         router.replace(`${ pathname }?${ params.toString() }`);
         
         // TODO : Remove query inside searchbar too.
