@@ -13,9 +13,6 @@ export const env = createEnv({
         TMDB_API_TOKEN: z.string(),
         SUPABASE_URL: z.string(),
         SUPABASE_ANON_KEY: z.string(),
-        AUTH_SECRET: z.string(),
-        AUTH_GITHUB_ID: z.string(),
-        AUTH_GITHUB_SECRET: z.string(),
     },
 
     /**
@@ -36,10 +33,6 @@ export const env = createEnv({
         TMDB_API_TOKEN: process.env.TMDB_API_TOKEN,
         SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
         SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
-        AUTH_SECRET: process.env.AUTH_SECRET,
-        AUTH_GITHUB_ID: process.env.AUTH_GITHUB_ID,
-        AUTH_GITHUB_SECRET: process.env.AUTH_GITHUB_SECRET,
-        // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
     },
     /**
      * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially
