@@ -16,13 +16,6 @@ jobs:
       matrix:
         node-version: [20.x]
 
-    # Set environment variables once for the entire job
-    env:
-      NODE_ENV: production
-      TMDB_API_TOKEN: ${{ secrets.TMDB_API_TOKEN }}
-      NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-      NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
-
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
@@ -38,6 +31,16 @@ jobs:
 
     - name: Run linter
       run: npm run lint
+      env:
+        NODE_ENV: production
+        TMDB_API_TOKEN: ${{ secrets.TMDB_API_TOKEN }}
+        NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+        NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
 
     - name: Build project
       run: npm run build
+      env:
+        NODE_ENV: production
+        TMDB_API_TOKEN: ${{ secrets.TMDB_API_TOKEN }}
+        NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+        NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
