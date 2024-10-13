@@ -19,10 +19,9 @@ jobs:
     # Set environment variables once for the entire job
     env:
       NODE_ENV: production
-      DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
-      TMDB_API_TOKEN: ${{ secrets.TMDB_API_TOKEN }},
-      SUPABASE_URL: ${{ secrets.SUPABASE_URL }},
-      SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+      TMDB_API_TOKEN: ${{ secrets.TMDB_API_TOKEN }}
+      NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
 
     steps:
     - name: Checkout repository
