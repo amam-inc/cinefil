@@ -8,6 +8,11 @@ on:
     branches:
       - main
 
+env:
+  TMDB_API_TOKEN: ${{ secrets.TMDB_API_TOKEN }}
+  NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+  NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -31,16 +36,6 @@ jobs:
 
     - name: Run linter
       run: npm run lint
-      env:
-        NODE_ENV: production
-        TMDB_API_TOKEN: ${{ secrets.TMDB_API_TOKEN }}
-        NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-        NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
 
     - name: Build project
       run: npm run build
-      env:
-        NODE_ENV: production
-        TMDB_API_TOKEN: ${{ secrets.TMDB_API_TOKEN }}
-        NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-        NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
