@@ -12,7 +12,7 @@ export const env = createEnv({
             .default("development"),
         TMDB_API_TOKEN: z.string(),
         SUPABASE_URL: z.string(),
-        SUPABASE_ANON_KEY: z.string(),
+        SUPABASE_ANON_KEY: z.string()
     },
 
     /**
@@ -32,7 +32,7 @@ export const env = createEnv({
         NODE_ENV: process.env.NODE_ENV,
         TMDB_API_TOKEN: process.env.TMDB_API_TOKEN,
         SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
-        SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+        SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
     },
     /**
      * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially
